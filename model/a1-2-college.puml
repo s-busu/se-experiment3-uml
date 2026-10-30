@@ -1,0 +1,57 @@
+@startuml A1_2_College
+'==============================================================
+' 实验三 A1-2  College / Building / Course
+' 聚合(空心菱形) + 组合(实心菱形) + 约束性注释
+'==============================================================
+
+title A1-2  College 聚合 / 组合模型
+
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor White
+  BorderColor #444444
+  ArrowColor #444444
+}
+hide empty members
+
+class College {
+  - name : String
+  + addBuilding(b : Building) : void
+  + addCourse(c : Course) : void
+  + getBuildings() : Building[]
+  + getCourses() : Course[]
+}
+
+class Building {
+  - name : String
+  - address : String
+  + getName() : String
+  + getAddress() : String
+}
+
+class Course {
+  - name : String
+  - building : Building
+  + getName() : String
+  + getBuilding() : Building
+}
+
+College "学院\n1" o-- "建筑\n0..*" Building : 包含 >
+College "学院\n1" *-- "课程\n1..*" Course : 开设 >
+Course "课程\n*" --> "建筑\n1" Building : 开设于 >
+
+note right of Course
+  约束性注释：
+  {Course 一定在某个 Building 中进行}
+  即每个 Course 都必须关联且仅关联一个 Building，
+  Building 端多重性为 "1"，Course 端为 "*"。
+end note
+
+note bottom of College
+  聚合（o--，空心菱形）：建筑构成学院，
+  建筑可脱离学院独立存在；
+  组合（*--，实心菱形）：课程是学院不可分割的组成部分，
+  课程生命周期依附于学院。
+end note
+
+@enduml

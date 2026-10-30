@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmi:version="2.1"
+    xsi:schemaLocation="http://schema.omg.org/spec/XMI/2.1 http://schema.omg.org/spec/UML/20110401/UML.xmi">
+<uml:Model xmi:id="model_0111" name="软件工程实验三-A1-3">
+  <uml:packagedElement xmi:id="pkg_0110" name="学校领域模型（School / Department / Instructor / Subject / Student）" visibility="public">
+    <uml:packagedElement xmi:id="cls_0001" name="School" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0002" name="name" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0003" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0004" name="getName" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0005" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0006" name="getDepartments" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0007" name="Department[]"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0008" name="getStudents" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0009" name="Student[]"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0010" name="addDepartment" visibility="public" isQuery="false">
+        <uml:ownedParameter xmi:id="param_0011" name="d" visibility="public" kind="in">
+          <uml:type>
+            <uml:PrimitiveType xmi:id="pt_0012" name="Department"/>
+          </uml:type>
+        </uml:ownedParameter>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0013" name="addStudent" visibility="public" isQuery="false">
+        <uml:ownedParameter xmi:id="param_0014" name="s" visibility="public" kind="in">
+          <uml:type>
+            <uml:PrimitiveType xmi:id="pt_0015" name="Student"/>
+          </uml:type>
+        </uml:ownedParameter>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0016" name="Department" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0017" name="name" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0018" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0019" name="getName" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0020" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0021" name="getInstructors" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0022" name="Instructor[]"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0023" name="getSubjects" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0024" name="Subject[]"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0025" name="addInstructor" visibility="public" isQuery="false">
+        <uml:ownedParameter xmi:id="param_0026" name="i" visibility="public" kind="in">
+          <uml:type>
+            <uml:PrimitiveType xmi:id="pt_0027" name="Instructor"/>
+          </uml:type>
+        </uml:ownedParameter>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0028" name="addSubject" visibility="public" isQuery="false">
+        <uml:ownedParameter xmi:id="param_0029" name="s" visibility="public" kind="in">
+          <uml:type>
+            <uml:PrimitiveType xmi:id="pt_0030" name="Subject"/>
+          </uml:type>
+        </uml:ownedParameter>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0031" name="Instructor" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0032" name="name" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0033" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0034" name="employeeNo" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0035" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0036" name="getName" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0037" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0038" name="getDepartments" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0039" name="Department[]"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0040" name="getTaughtSubjects" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0041" name="Subject[]"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0042" name="teach" visibility="public" isQuery="false">
+        <uml:ownedParameter xmi:id="param_0043" name="s" visibility="public" kind="in">
+          <uml:type>
+            <uml:PrimitiveType xmi:id="pt_0044" name="Subject"/>
+          </uml:type>
+        </uml:ownedParameter>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0045" name="Subject" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0046" name="name" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0047" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0048" name="credit" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0049" name="Integer"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0050" name="getName" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0051" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0052" name="getCredit" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0053" name="Integer"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0054" name="getDepartment" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0055" name="Department"/>
+        </uml:type>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0056" name="Student" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0057" name="name" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0058" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0059" name="studentNo" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0060" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0061" name="getName" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0062" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0063" name="getSubjects" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0064" name="Subject[]"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0065" name="attend" visibility="public" isQuery="false">
+        <uml:ownedParameter xmi:id="param_0066" name="s" visibility="public" kind="in">
+          <uml:type>
+            <uml:PrimitiveType xmi:id="pt_0067" name="Subject"/>
+          </uml:type>
+        </uml:ownedParameter>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:ownedRelationship xmi:type="uml:Association" xmi:id="rel_0068" name="设有" visibility="public" isComposite="true">
+      <uml:ownedEnd xmi:id="end_0070" name="学院" visibility="public" isNavigable="true" multiplicity="1">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0069" name="School"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedEnd xmi:id="end_0072" name="系" visibility="public" isNavigable="true" multiplicity="1..*">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0071" name="Department"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedComment xmi:id="cmt_0073">
+        <uml:body>实心菱形：一个学院由 1 到多个系构成。</uml:body>
+      </uml:ownedComment>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Association" xmi:id="rel_0074" name="拥有指导教师" visibility="public" isAggregate="true">
+      <uml:ownedEnd xmi:id="end_0076" name="系" visibility="public" isNavigable="true" multiplicity="1">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0075" name="Department"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedEnd xmi:id="end_0078" name="指导教师" visibility="public" isNavigable="true" multiplicity="1..*">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0077" name="Instructor"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedComment xmi:id="cmt_0079">
+        <uml:body>空心菱形：每个系至少拥有 1 位指导教师。</uml:body>
+      </uml:ownedComment>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Association" xmi:id="rel_0080" name="属于" visibility="public">
+      <uml:ownedEnd xmi:id="end_0082" name="指导教师" visibility="public" isNavigable="true" multiplicity="*">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0081" name="Instructor"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedEnd xmi:id="end_0084" name="系" visibility="public" isNavigable="true" multiplicity="1..*">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0083" name="Department"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedComment xmi:id="cmt_0085">
+        <uml:body>每个指导教师至少属于某个系，故 Instructor 端多重性为 *。</uml:body>
+      </uml:ownedComment>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Association" xmi:id="rel_0086" name="提供课程" visibility="public" isAggregate="true">
+      <uml:ownedEnd xmi:id="end_0088" name="系" visibility="public" isNavigable="true" multiplicity="1">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0087" name="Department"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedEnd xmi:id="end_0090" name="课程" visibility="public" isNavigable="true" multiplicity="1..*">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0089" name="Subject"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedComment xmi:id="cmt_0091">
+        <uml:body>每个系至少提供 1 门课程。</uml:body>
+      </uml:ownedComment>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Association" xmi:id="rel_0092" name="教授" visibility="public">
+      <uml:ownedEnd xmi:id="end_0094" name="指导教师" visibility="public" isNavigable="true" multiplicity="1">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0093" name="Instructor"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedEnd xmi:id="end_0096" name="课程" visibility="public" isNavigable="true" multiplicity="1..3">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0095" name="Subject"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedComment xmi:id="cmt_0097">
+        <uml:body>每位指导教师教授 1-3 门课程。</uml:body>
+      </uml:ownedComment>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Association" xmi:id="rel_0098" name="拥有学生" visibility="public" isAggregate="true">
+      <uml:ownedEnd xmi:id="end_0100" name="学院" visibility="public" isNavigable="true" multiplicity="1">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0099" name="School"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedEnd xmi:id="end_0102" name="学生" visibility="public" isNavigable="true" multiplicity="0..*">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0101" name="Student"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedComment xmi:id="cmt_0103">
+        <uml:body>学院拥有 0 到多名学生。</uml:body>
+      </uml:ownedComment>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Association" xmi:id="rel_0104" name="参加学习" visibility="public">
+      <uml:ownedEnd xmi:id="end_0106" name="学生" visibility="public" isNavigable="true" multiplicity="1">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0105" name="Student"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedEnd xmi:id="end_0108" name="课程" visibility="public" isNavigable="true" multiplicity="1..5">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0107" name="Subject"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedComment xmi:id="cmt_0109">
+        <uml:body>每名学生参加 1-5 门课程学习。</uml:body>
+      </uml:ownedComment>
+    </uml:ownedRelationship>
+  </uml:packagedElement>
+</uml:Model>
+</xmi:XMI>

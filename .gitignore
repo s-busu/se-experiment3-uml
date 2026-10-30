@@ -1,0 +1,21 @@
+﻿# Gradle
+code/build/
+code/.gradle/
+.gradle/
+
+# IDE
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# 工具与临时文件
+tools/plantuml.jar
+tools/_scratch/
+tools/*.log
+tools/__pycache__/
+_*.txt
+page411.html
+report_preview.pdf
+_preview/

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmi:version="2.1"
+    xsi:schemaLocation="http://schema.omg.org/spec/XMI/2.1 http://schema.omg.org/spec/UML/20110401/UML.xmi">
+<uml:Model xmi:id="model_0051" name="软件工程实验三-A1-2">
+  <uml:packagedElement xmi:id="pkg_0050" name="College 聚合 / 组合模型" visibility="public">
+    <uml:packagedElement xmi:id="cls_0001" name="College" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0002" name="name" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0003" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0004" name="addBuilding" visibility="public" isQuery="false">
+        <uml:ownedParameter xmi:id="param_0005" name="b" visibility="public" kind="in">
+          <uml:type>
+            <uml:PrimitiveType xmi:id="pt_0006" name="Building"/>
+          </uml:type>
+        </uml:ownedParameter>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0007" name="addCourse" visibility="public" isQuery="false">
+        <uml:ownedParameter xmi:id="param_0008" name="c" visibility="public" kind="in">
+          <uml:type>
+            <uml:PrimitiveType xmi:id="pt_0009" name="Course"/>
+          </uml:type>
+        </uml:ownedParameter>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0010" name="getBuildings" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0011" name="Building[]"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0012" name="getCourses" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0013" name="Course[]"/>
+        </uml:type>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0014" name="Building" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0015" name="name" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0016" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0017" name="address" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0018" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0019" name="getName" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0020" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0021" name="getAddress" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0022" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0023" name="Course" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0024" name="name" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0025" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0026" name="building" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0027" name="Building"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0028" name="getName" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0029" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0030" name="getBuilding" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0031" name="Building"/>
+        </uml:type>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:ownedRelationship xmi:type="uml:Association" xmi:id="rel_0032" name="包含" visibility="public" isAggregate="true">
+      <uml:ownedEnd xmi:id="end_0034" name="学院" visibility="public" isNavigable="true" multiplicity="1">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0033" name="College"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedEnd xmi:id="end_0036" name="建筑" visibility="public" isNavigable="true" multiplicity="0..*">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0035" name="Building"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedComment xmi:id="cmt_0037">
+        <uml:body>空心菱形：建筑构成学院，建筑可脱离学院独立存在。</uml:body>
+      </uml:ownedComment>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Association" xmi:id="rel_0038" name="开设" visibility="public" isComposite="true">
+      <uml:ownedEnd xmi:id="end_0040" name="学院" visibility="public" isNavigable="true" multiplicity="1">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0039" name="College"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedEnd xmi:id="end_0042" name="课程" visibility="public" isNavigable="true" multiplicity="1..*">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0041" name="Course"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedComment xmi:id="cmt_0043">
+        <uml:body>实心菱形：课程是学院不可分割的组成部分，生命周期依附于学院。</uml:body>
+      </uml:ownedComment>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Association" xmi:id="rel_0044" name="开设于" visibility="public">
+      <uml:ownedEnd xmi:id="end_0046" name="课程" visibility="public" isNavigable="true" multiplicity="*">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0045" name="Course"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedEnd xmi:id="end_0048" name="建筑" visibility="public" isNavigable="true" multiplicity="1">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0047" name="Building"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedComment xmi:id="cmt_0049">
+        <uml:body>约束性注释：{Course 一定在某个 Building 中进行}。Building 端多重性为 1，Course 端为 *。</uml:body>
+      </uml:ownedComment>
+    </uml:ownedRelationship>
+  </uml:packagedElement>
+</uml:Model>
+</xmi:XMI>

@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmi:version="2.1"
+    xsi:schemaLocation="http://schema.omg.org/spec/XMI/2.1 http://schema.omg.org/spec/UML/20110401/UML.xmi">
+<uml:Model xmi:id="model_0168" name="软件工程实验三-A1-4">
+  <uml:packagedElement xmi:id="pkg_0167" name="网上购物系统类模型（类之间关系含多重性）" visibility="public">
+    <uml:packagedElement xmi:id="cls_0001" name="Customer" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0002" name="name" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0003" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0004" name="contact" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0005" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0006" name="deliveryAddress" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0007" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0008" name="active" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0009" name="Boolean"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0010" name="getName" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0011" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0012" name="getContact" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0013" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0014" name="getDeliveryAddress" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0015" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0016" name="isActive" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0017" name="Boolean"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0018" name="placeOrder" visibility="public" isQuery="false">
+        <uml:ownedParameter xmi:id="param_0019" name="o" visibility="public" kind="in">
+          <uml:type>
+            <uml:PrimitiveType xmi:id="pt_0020" name="Order"/>
+          </uml:type>
+        </uml:ownedParameter>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0021" name="getOrders" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0022" name="Order[]"/>
+        </uml:type>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0023" name="Order" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0024" name="createDate" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0025" name="Date"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0026" name="status" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0027" name="OrderStatus"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0028" name="getCreateDate" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0029" name="Date"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0030" name="getStatus" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0031" name="OrderStatus"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0032" name="addDetail" visibility="public" isQuery="false">
+        <uml:ownedParameter xmi:id="param_0033" name="d" visibility="public" kind="in">
+          <uml:type>
+            <uml:PrimitiveType xmi:id="pt_0034" name="OrderDetail"/>
+          </uml:type>
+        </uml:ownedParameter>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0035" name="getDetails" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0036" name="OrderDetail[]"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0037" name="getPayment" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0038" name="Payment"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0039" name="pay" visibility="public" isQuery="false">
+        <uml:ownedParameter xmi:id="param_0040" name="p" visibility="public" kind="in">
+          <uml:type>
+            <uml:PrimitiveType xmi:id="pt_0041" name="Payment"/>
+          </uml:type>
+        </uml:ownedParameter>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0042" name="ship" visibility="public" isQuery="false"/>
+      <uml:ownedOperation xmi:id="op_0043" name="deliver" visibility="public" isQuery="false"/>
+      <uml:ownedOperation xmi:id="op_0044" name="cancel" visibility="public" isQuery="false"/>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0045" name="OrderDetail" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0046" name="quantity" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0047" name="Integer"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0048" name="getQuantity" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0049" name="Integer"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0050" name="calculateSubTotal" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0051" name="BigDecimal"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0052" name="calculateWeight" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0053" name="Double"/>
+        </uml:type>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0054" name="Product" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0055" name="title" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0056" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0057" name="weight" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0058" name="Double"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0059" name="description" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0060" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0061" name="unitPrice" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0062" name="BigDecimal"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0063" name="getTitle" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0064" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0065" name="getWeight" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0066" name="Double"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0067" name="getDescription" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0068" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0069" name="getUnitPrice" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0070" name="BigDecimal"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0071" name="getPriceForQuantity" visibility="public" isQuery="false">
+        <uml:ownedParameter xmi:id="param_0072" name="qty" visibility="public" kind="in">
+          <uml:type>
+            <uml:PrimitiveType xmi:id="pt_0073" name="Integer"/>
+          </uml:type>
+        </uml:ownedParameter>
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0074" name="BigDecimal"/>
+        </uml:type>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0075" name="Payment" visibility="public" isAbstract="true">
+      <uml:ownedComment xmi:id="cmt_0076">
+        <uml:body>抽象支付方式，amount 为支付金额。</uml:body>
+      </uml:ownedComment>
+      <uml:ownedAttribute xmi:id="attr_0077" name="amount" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0078" name="BigDecimal"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0079" name="getAmount" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0080" name="BigDecimal"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0081" name="setAmount" visibility="public" isQuery="false">
+        <uml:ownedParameter xmi:id="param_0082" name="a" visibility="public" kind="in">
+          <uml:type>
+            <uml:PrimitiveType xmi:id="pt_0083" name="BigDecimal"/>
+          </uml:type>
+        </uml:ownedParameter>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0084" name="Credit" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0085" name="number" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0086" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0087" name="type" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0088" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0089" name="expireDate" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0090" name="Date"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0091" name="getNumber" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0092" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0093" name="getType" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0094" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0095" name="getExpireDate" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0096" name="Date"/>
+        </uml:type>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0097" name="Cash" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0098" name="cashTendered" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0099" name="BigDecimal"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0100" name="getCashTendered" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0101" name="BigDecimal"/>
+        </uml:type>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0102" name="WireTransfer" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0103" name="bankID" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0104" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0105" name="bankName" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0106" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0107" name="getBankID" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0108" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0109" name="getBankName" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0110" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0111" name="AliPay" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0112" name="number" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0113" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0114" name="getNumber" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0115" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0116" name="WeixinPay" visibility="public">
+      <uml:ownedAttribute xmi:id="attr_0117" name="number" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0118" name="String"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0119" name="getNumber" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0120" name="String"/>
+        </uml:type>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+    <uml:packagedElement xmi:id="cls_0121" name="OrderStatus" visibility="public" xmi.stereotype="enumeration">
+      <uml:ownedComment xmi:id="cmt_0122">
+        <uml:body>订单状态枚举，包含 CREATE、PAID、SHIPPING、DELIVERED、CANCEL 五种状态。</uml:body>
+      </uml:ownedComment>
+      <uml:ownedAttribute xmi:id="attr_0123" name="CREATE" visibility="public" isReadOnly="false"/>
+      <uml:ownedAttribute xmi:id="attr_0124" name="PAID" visibility="public" isReadOnly="false"/>
+      <uml:ownedAttribute xmi:id="attr_0125" name="SHIPPING" visibility="public" isReadOnly="false"/>
+      <uml:ownedAttribute xmi:id="attr_0126" name="DELIVERED" visibility="public" isReadOnly="false"/>
+      <uml:ownedAttribute xmi:id="attr_0127" name="CANCEL" visibility="public" isReadOnly="false"/>
+    </uml:packagedElement>
+    <uml:ownedRelationship xmi:type="uml:Association" xmi:id="rel_0128" name="下单" visibility="public">
+      <uml:ownedEnd xmi:id="end_0130" name="客户" visibility="public" isNavigable="true" multiplicity="1">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0129" name="Customer"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedEnd xmi:id="end_0132" name="订单" visibility="public" isNavigable="true" multiplicity="0..*">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0131" name="Order"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedComment xmi:id="cmt_0133">
+        <uml:body>一个客户可以下 0 到多个订单，每个订单属于且仅属于一个客户。</uml:body>
+      </uml:ownedComment>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Association" xmi:id="rel_0134" name="包含明细" visibility="public" isComposite="true">
+      <uml:ownedEnd xmi:id="end_0136" name="订单" visibility="public" isNavigable="true" multiplicity="1">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0135" name="Order"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedEnd xmi:id="end_0138" name="订单明细" visibility="public" isNavigable="true" multiplicity="1..*">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0137" name="OrderDetail"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedComment xmi:id="cmt_0139">
+        <uml:body>实心菱形：订单包含 1 到多条订单明细，明细生命周期依附于订单。</uml:body>
+      </uml:ownedComment>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Association" xmi:id="rel_0140" name="对应商品" visibility="public">
+      <uml:ownedEnd xmi:id="end_0142" name="订单明细" visibility="public" isNavigable="true" multiplicity="0..*">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0141" name="OrderDetail"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedEnd xmi:id="end_0144" name="商品项" visibility="public" isNavigable="true" multiplicity="1">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0143" name="Product"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedComment xmi:id="cmt_0145">
+        <uml:body>每条订单明细对应且仅对应一个商品项；同一商品可出现在多条明细中。</uml:body>
+      </uml:ownedComment>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Association" xmi:id="rel_0146" name="采用支付" visibility="public">
+      <uml:ownedEnd xmi:id="end_0148" name="订单" visibility="public" isNavigable="true" multiplicity="1">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0147" name="Order"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedEnd xmi:id="end_0150" name="支付方式" visibility="public" isNavigable="true" multiplicity="0..1">
+        <uml:type>
+          <uml:Class xmi:id="clsref_0149" name="Payment"/>
+        </uml:type>
+      </uml:ownedEnd>
+      <uml:ownedComment xmi:id="cmt_0151">
+        <uml:body>一个订单最多对应一种支付方式；支付前 payment 为空。</uml:body>
+      </uml:ownedComment>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Generalization" xmi:id="rel_0152" name="">
+      <uml:generalChild xmi:id="gen_0153" name="Credit"/>
+      <uml:generalParent xmi:id="gen_0154" name="Payment"/>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Generalization" xmi:id="rel_0155" name="">
+      <uml:generalChild xmi:id="gen_0156" name="Cash"/>
+      <uml:generalParent xmi:id="gen_0157" name="Payment"/>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Generalization" xmi:id="rel_0158" name="">
+      <uml:generalChild xmi:id="gen_0159" name="WireTransfer"/>
+      <uml:generalParent xmi:id="gen_0160" name="Payment"/>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Generalization" xmi:id="rel_0161" name="">
+      <uml:generalChild xmi:id="gen_0162" name="AliPay"/>
+      <uml:generalParent xmi:id="gen_0163" name="Payment"/>
+    </uml:ownedRelationship>
+    <uml:ownedRelationship xmi:type="uml:Generalization" xmi:id="rel_0164" name="">
+      <uml:generalChild xmi:id="gen_0165" name="WeixinPay"/>
+      <uml:generalParent xmi:id="gen_0166" name="Payment"/>
+    </uml:ownedRelationship>
+  </uml:packagedElement>
+</uml:Model>
+</xmi:XMI>

@@ -1,0 +1,151 @@
+@startuml A1_4_Shopping
+'==============================================================
+' 实验三 A1-4  简化的网上购物系统 类模型
+' Customer / Order / OrderDetail / Product
+' Payment(abstract) + Credit / Cash / WireTransfer / AliPay / WeixinPay
+' 关联端标注格式：{角色名 \n 多重性}
+'==============================================================
+
+title A1-4  网上购物系统类模型（类之间关系含多重性）
+
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor White
+  BorderColor #444444
+  ArrowColor #444444
+}
+skinparam linetype polyline
+left to right direction
+hide empty members
+hide circle
+
+class Customer {
+  - name : String
+  - contact : String
+  - deliveryAddress : String
+  - active : Boolean
+  + getName() : String
+  + getContact() : String
+  + getDeliveryAddress() : String
+  + isActive() : Boolean
+  + placeOrder(o : Order) : void
+  + getOrders() : Order[]
+}
+
+class Order {
+  - createDate : Date
+  - status : OrderStatus
+  + getCreateDate() : Date
+  + getStatus() : OrderStatus
+  + addDetail(d : OrderDetail) : void
+  + getDetails() : OrderDetail[]
+  + getPayment() : Payment
+  + pay(p : Payment) : void
+  + ship() : void
+  + deliver() : void
+  + cancel() : void
+}
+
+class OrderDetail {
+  - quantity : Integer
+  + getQuantity() : Integer
+  + calculateSubTotal() : BigDecimal
+  + calculateWeight() : Double
+}
+
+class Product {
+  - title : String
+  - weight : Double
+  - description : String
+  - unitPrice : BigDecimal
+  + getTitle() : String
+  + getWeight() : Double
+  + getDescription() : String
+  + getUnitPrice() : BigDecimal
+  + getPriceForQuantity(qty : Integer) : BigDecimal
+}
+
+abstract class Payment {
+  - amount : BigDecimal
+  + getAmount() : BigDecimal
+  + setAmount(a : BigDecimal) : void
+}
+
+class Credit {
+  - number : String
+  - type : String
+  - expireDate : Date
+  + getNumber() : String
+  + getType() : String
+  + getExpireDate() : Date
+}
+
+class Cash {
+  - cashTendered : BigDecimal
+  + getCashTendered() : BigDecimal
+}
+
+class WireTransfer {
+  - bankID : String
+  - bankName : String
+  + getBankID() : String
+  + getBankName() : String
+}
+
+class AliPay {
+  - number : String
+  + getNumber() : String
+}
+
+class WeixinPay {
+  - number : String
+  + getNumber() : String
+}
+
+enum OrderStatus {
+  CREATE
+  PAID
+  SHIPPING
+  DELIVERED
+  CANCEL
+}
+
+'--- 泛化关系：Payment 为抽象父类，五种具体支付方式 ---
+Payment <|-- Credit
+Payment <|-- Cash
+Payment <|-- WireTransfer
+Payment <|-- AliPay
+Payment <|-- WeixinPay
+
+'--- 关联关系与多重性（角色名 \n 多重性）---
+Customer "客户\n1" -- "订单\n0..*" Order : 下单 >
+Order "订单\n1" *-- "订单明细\n1..*" OrderDetail : 包含明细 >
+OrderDetail "订单明细\n0..*" --> "商品项\n1" Product : 对应商品 >
+Order "订单\n1" --> "支付方式\n0..1" Payment : 采用支付 >
+
+note bottom of Product
+  getPriceForQuantity(qty) 返回
+  单价 unitPrice 乘以数量 qty 后的金额；
+  OrderDetail.calculateSubTotal()
+  与 calculateWeight() 取自 Product。
+end note
+
+note right of Order
+  状态 status 取值：
+  CREATE / PAID / SHIPPING /
+  DELIVERED / CANCEL
+  状态流转由 pay/ship/deliver/cancel 驱动。
+end note
+
+note left of Payment
+  支付方式（抽象类）amount 为支付金额，
+  由 Credit、Cash、WireTransfer、
+  AliPay、WeixinPay 五种子类具体化。
+end note
+
+note bottom of Customer
+  active 表示是否激活状态，
+  失效客户不得下单。
+end note
+
+@enduml

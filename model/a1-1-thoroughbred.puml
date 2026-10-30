@@ -1,0 +1,37 @@
+@startuml A1_1_Thoroughbred
+'==============================================================
+' 实验三 A1-1  面向对象系统建模 —— Thoroughbred（优良品质的马）
+' 说明：属性均为私有可见性(-)，类型置于名字之后并以冒号分隔；
+'       操作由可见性级别、参数列表(带名字与类型)和返回类型表示。
+'==============================================================
+
+title A1-1  Thoroughbred 类模型
+
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor White
+  BorderColor #444444
+  ArrowColor #444444
+}
+hide empty members
+
+class Thoroughbred {
+  - mother : Thoroughbred
+  - father : Thoroughbred
+  - birthyear : Integer
+  + getCurrentAge() : Integer
+  + getFather() : Thoroughbred
+  + getMother() : Thoroughbred
+}
+
+note right of Thoroughbred
+  属性说明：
+  mother    : 母马（Thoroughbred 类型，自关联）
+  father    : 父马（Thoroughbred 类型，自关联）
+  birthyear : 出生年份
+
+  可见性：三个属性均为私有 (-)
+  操作：均为公有 (+) 无参，返回值类型已标注
+end note
+
+@enduml

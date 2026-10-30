@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmi:version="2.1"
+    xsi:schemaLocation="http://schema.omg.org/spec/XMI/2.1 http://schema.omg.org/spec/UML/20110401/UML.xmi">
+<uml:Model xmi:id="model_0016" name="软件工程实验三-A1-1">
+  <uml:packagedElement xmi:id="pkg_0015" name="Thoroughbred 类模型" visibility="public">
+    <uml:packagedElement xmi:id="cls_0001" name="Thoroughbred" visibility="public">
+      <uml:ownedComment xmi:id="cmt_0002">
+        <uml:body>母马与父马同为 Thoroughbred，构成自关联（递归关联）。</uml:body>
+      </uml:ownedComment>
+      <uml:ownedAttribute xmi:id="attr_0003" name="mother" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0004" name="Thoroughbred"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0005" name="father" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0006" name="Thoroughbred"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedAttribute xmi:id="attr_0007" name="birthyear" visibility="private" isReadOnly="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0008" name="Integer"/>
+        </uml:type>
+      </uml:ownedAttribute>
+      <uml:ownedOperation xmi:id="op_0009" name="getCurrentAge" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0010" name="Integer"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0011" name="getFather" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0012" name="Thoroughbred"/>
+        </uml:type>
+      </uml:ownedOperation>
+      <uml:ownedOperation xmi:id="op_0013" name="getMother" visibility="public" isQuery="false">
+        <uml:type>
+          <uml:PrimitiveType xmi:id="pt_0014" name="Thoroughbred"/>
+        </uml:type>
+      </uml:ownedOperation>
+    </uml:packagedElement>
+  </uml:packagedElement>
+</uml:Model>
+</xmi:XMI>

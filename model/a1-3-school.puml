@@ -1,0 +1,94 @@
+@startuml A1_3_School
+'==============================================================
+' 实验三 A1-3  学院/系/指导教师/课程/学生  领域模型
+' 依据需求：School 1..* Department；Department 1..* Instructor；
+'          Department 1..* Subject；Instructor 属于 1..* Department
+'          且教授 1..3 门课程；School 0..* Student；
+'          Student 参加 1..5 门课程。
+'==============================================================
+
+title A1-3  学校领域模型（School / Department / Instructor / Subject / Student）
+
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor White
+  BorderColor #444444
+  ArrowColor #444444
+}
+hide empty members
+
+class School {
+  - name : String
+  + getName() : String
+  + getDepartments() : Department[]
+  + getStudents() : Student[]
+  + addDepartment(d : Department) : void
+  + addStudent(s : Student) : void
+}
+
+class Department {
+  - name : String
+  + getName() : String
+  + getInstructors() : Instructor[]
+  + getSubjects() : Subject[]
+  + addInstructor(i : Instructor) : void
+  + addSubject(s : Subject) : void
+}
+
+class Instructor {
+  - name : String
+  - employeeNo : String
+  + getName() : String
+  + getDepartments() : Department[]
+  + getTaughtSubjects() : Subject[]
+  + teach(s : Subject) : void
+}
+
+class Subject {
+  - name : String
+  - credit : Integer
+  + getName() : String
+  + getCredit() : Integer
+  + getDepartment() : Department
+}
+
+class Student {
+  - name : String
+  - studentNo : String
+  + getName() : String
+  + getSubjects() : Subject[]
+  + attend(s : Subject) : void
+}
+
+'--- 关系与多重性（角色名 \n 多重性）---
+School "学院\n1" *-- "系\n1..*" Department : 设有 >
+Department "系\n1" o-- "指导教师\n1..*" Instructor : 拥有指导教师 >
+Instructor "指导教师\n*" --> "系\n1..*" Department : 属于 >
+Department "系\n1" o-- "课程\n1..*" Subject : 提供课程 >
+Instructor "指导教师\n1" -- "课程\n1..3" Subject : 教授 >
+School "学院\n1" o-- "学生\n0..*" Student : 拥有学生 >
+Student "学生\n1" -- "课程\n1..5" Subject : 参加学习 >
+
+note right of Department
+  {每个系至少拥有 1 位指导教师，
+   并提供至少 1 门课程}
+end note
+
+note right of Instructor
+  {每个指导教师至少属于某个系，
+   且教授 1-3 门课程}
+end note
+
+note bottom of Student
+  {学院拥有 0 到多名学生；
+   每名学生参加 1-5 门课程学习}
+end note
+
+note left of Subject
+  说明：题目中"系提供的课程 Subject"
+  与"学生参加的课程"指向同一实体，
+  即 Subject（课程），
+  指导教师教授、学生选修的都是它。
+end note
+
+@enduml
