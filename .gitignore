@@ -17,6 +17,9 @@ tools/*.log
 tools/_*.out
 tools/_*.err
 tools/*.py.orig
+tools/_*.out
+tools/_*.err
+tools/*.py.orig
 tools/__pycache__/
 tools/final_commit.py
 tools/prune2.py
