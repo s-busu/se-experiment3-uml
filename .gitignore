@@ -14,6 +14,9 @@ code/.gradle/
 tools/plantuml.jar
 tools/_scratch/
 tools/*.log
+tools/_*.out
+tools/_*.err
+tools/*.py.orig
 tools/__pycache__/
 tools/final_commit.py
 tools/prune2.py
@@ -21,3 +24,6 @@ _*.txt
 page411.html
 report_preview.pdf
 _preview/
+tools/state.py
+tools/final_commit.py
+tools/prune2.py
