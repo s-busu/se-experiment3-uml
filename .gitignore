@@ -15,6 +15,8 @@ tools/plantuml.jar
 tools/_scratch/
 tools/*.log
 tools/__pycache__/
+tools/final_commit.py
+tools/prune2.py
 _*.txt
 page411.html
 report_preview.pdf
