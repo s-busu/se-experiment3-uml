@@ -1,4 +1,6 @@
-﻿# Gradle
+﻿.workbuddy/
+
+# Gradle
 code/build/
 code/.gradle/
 .gradle/

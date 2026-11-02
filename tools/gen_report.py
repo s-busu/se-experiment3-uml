@@ -258,8 +258,12 @@ def build_cover(doc):
                     name="宋体", size=14, bold=True)
 
 
-def clear_body_after_cover(doc):
-    """删除封面之后的所有内容，为新正文让路。"""
+def clear_body_after_cover(doc, keep_cover=False):
+    """重置模板正文，为新内容让路。
+
+    keep_cover=True  —— 保留模板封面（段落 0..「一、实验目的」之前）
+    keep_cover=False —— 连封面一起删除，正文直接从「一、实验目的」开始
+    """
     body = doc.element.body
     children = list(body)
     keep = 0
@@ -276,6 +280,8 @@ def clear_body_after_cover(doc):
                 break
         keep = i + 1
     if not found:
+        keep = 0
+    if not keep_cover:
         keep = 0
     for child in children[keep:]:
         if child.tag.split("}")[-1] != "sectPr":
@@ -304,12 +310,18 @@ def rel_rows(m):
 
 
 def build_report():
-    doc = Document(TPL)
-    build_cover(doc)
-    clear_body_after_cover(doc)
+    # 默认不带封面（正文直接从「一、实验目的」开始）；
+    # 需要带封面时把 keep_cover 改成 True。
+    keep_cover = False
 
-    # 封面独占一页
-    page_break(doc)
+    doc = Document(TPL)
+    if keep_cover:
+        build_cover(doc)
+        clear_body_after_cover(doc, keep_cover=True)
+        # 封面独占一页
+        page_break(doc)
+    else:
+        clear_body_after_cover(doc, keep_cover=False)
 
     # ---------- 一、实验目的 ----------
     add_heading(doc, "一、实验目的")
