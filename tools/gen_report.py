@@ -310,9 +310,9 @@ def rel_rows(m):
 
 
 def build_report():
-    # 默认不带封面（正文直接从「一、实验目的」开始）；
-    # 需要带封面时把 keep_cover 改成 True。
-    keep_cover = False
+    # 默认带封面（封面占第 1 页，正文从第 2 页开始）。
+    # 若需要不带封面的版本，把 keep_cover 改成 False。
+    keep_cover = True
 
     doc = Document(TPL)
     if keep_cover:
